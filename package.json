@@ -4,7 +4,8 @@
   "description": "Simple calendar for TypeScript training",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "serve": "concurrently \"lite-server\" \"tsc -w\""
   },
   "keywords": [
     "training",
@@ -14,6 +15,8 @@
   "author": "5182",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^7.1.0",
+    "lite-server": "^2.6.1",
     "typescript": "^4.6.4"
   }
 }
