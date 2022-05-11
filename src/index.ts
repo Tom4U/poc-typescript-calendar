@@ -1,15 +1,11 @@
+import { App } from "./app.js";
 import { CalendarApp } from "./calendar.app.js";
-
-const yearSelectorId = 'year-selector';
-const monthSelectorId = 'month-selector';
-const calendarElementId = 'calendar';
+import { TestApp } from "./test.app.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    new CalendarApp(
-        yearSelectorId,
-        monthSelectorId,
-        calendarElementId
-    )
+    new App('Demo App').start();
+    //new TestApp('Test App').start();
+    //new CalendarApp('Kalender').start();
 });
 
 

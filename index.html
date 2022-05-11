@@ -4,23 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalender</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="wrapper">
+    <div id="app" class="wrapper">
         <header>
-            <h1 class="app-title">Kalender</h1>
-            <nav class="selectors">
-                <select name="year" id="year-selector" class="selector"></select>
-                <select name="month" id="month-selector" class="selector"></select>
-            </nav>
+            <h1 class="app-title">{{appTitle}}</h1>
+            {{header}}
         </header>
         <main>
-            <section id="calendar" class="calendar"></section>
+            {{content}}
         </main>
         <footer>
-            <span data-copyright>&copy; {{year}} by me :)</span>
+            {{footer}}
         </footer>
     </div>
     <script src="./dist/index.js" type="module"></script>

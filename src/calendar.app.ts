@@ -1,30 +1,37 @@
+import { App } from "./app.js";
 import { Calendar } from "./calendar.js";
 import { DateHelper } from "./date-helper.js";
 import { DomHelper } from "./dom-helper.js";
 
-export class CalendarApp {
+export class CalendarApp extends App {
     private readonly calendar = new Calendar();
+    private readonly calendarElementId = 'calendar';
+    private readonly yearSelectorId = 'year-selector';
+    private readonly monthSelectorId = 'month-selector';
 
-    constructor(
-        private readonly yearSelectorId: string,
-        private readonly monthSelectorId: string,
-        private readonly calendarElementId: string) {
+    protected header = `
+    <nav class="selectors">
+        <select name="year" id="${this.yearSelectorId}" class="selector"></select>
+        <select name="month" id="${this.monthSelectorId}" class="selector"></select>
+    </nav>
+    `;
+
+    protected content = `<section id="${this.calendarElementId}" class="calendar"></section>`;
+
+    public start(): void {
+        super.start();
         this.init();
     }
 
     private init(): void {
-        console.log('App gestartet');
-
         this.initSelectors();
 
         this.calendar.loadCalendar(
             {
-                element: DomHelper.getCalendarElement(this.calendarElementId),
+                element: DomHelper.getElement(this.calendarElementId),
                 month: DateHelper.getCurrentMonth(),
                 year: DateHelper.getCurrentYear()
             });
-
-        DomHelper.updateCopyrightYear();
     }
 
     private initSelectors(): void {
@@ -73,9 +80,9 @@ export class CalendarApp {
 
     private loadCalendar(month: number, year: number) {
         this.calendar.loadCalendar({
-            element: DomHelper.getCalendarElement(this.calendarElementId),
+            element: DomHelper.getElement(this.calendarElementId),
             month,
             year
-        })
+        });
     }
 }

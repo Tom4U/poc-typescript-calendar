@@ -18,22 +18,11 @@ export class DomHelper {
         select.appendChild(option);
     }
     
-    static updateCopyrightYear(): void {
-        const element = document.querySelector('[data-copyright]');
+    static getElement(elementId: string): HTMLElement {
+        const element = document.getElementById(elementId);
     
         if (!element) {
-            console.warn('No element with attribute data-copyright found');
-            return;
-        }
-    
-        element.innerHTML = element.innerHTML.replace('{{year}}', DateHelper.getCurrentYear().toString());
-    }
-    
-    static getCalendarElement(calendarElementId: string): HTMLElement {
-        const element = document.getElementById(calendarElementId);
-    
-        if (!element) {
-            throw new Error(`Calendar element with id ${calendarElementId} not found`);
+            throw new Error(`Element with id ${elementId} not found`);
         }
     
         return element;
