@@ -1,0 +1,22 @@
+Projektstruktur:
+
+- dist
+|- index.html
+|- components
+|-|- **/*.js
+|-|- **/*.html
+|-|- **/*.css
+- src
+|- index.html
+|- components
+|-|- **/*.ts 
+|-|- **/*.html
+|-|- **/*.css
+
+Logik
+* index.html gibt nur ein Einstiegs-Element an, das eine Component ist (z.B. app)
+* Components können weitere Components beinhalten (z.B. calendar -> calendar-view)
+* Components können eine Template-Datei (.html) oder einen Template-String besitzen (``)
+* alle TS-Dateien werden automatisch nach dist/ geladen
+* alle anderen Dateien "manuell" nach dist/ -> NPM Scripts nutzen
+* live-server ruft dist/index.html auf
