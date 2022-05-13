@@ -3,15 +3,15 @@ Projektstruktur:
 - dist
 |- index.html
 |- components
-|-|- **/*.js
-|-|- **/*.html
-|-|- **/*.css
+|  |- **/*.js
+|  |- **/*.html
+|  |- **/*.css
 - src
 |- index.html
 |- components
-|-|- **/*.ts 
-|-|- **/*.html
-|-|- **/*.css
+|  |- **/*.ts 
+|  |- **/*.html
+|  |- **/*.css
 
 Logik
 * index.html gibt nur ein Einstiegs-Element an, das eine Component ist (z.B. app)

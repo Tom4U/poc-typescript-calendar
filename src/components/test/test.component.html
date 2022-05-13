@@ -1,0 +1,17 @@
+<h2>Template Inhalt</h2>
+<p>TEST TEMPLATE WORKS!</p>
+<hr>
+<h2>Child Template</h2>
+<test-child></test-child>
+<hr>
+<h2>Template Tags</h2>
+<p>Dieses Tag sollte geparst werden: <span style="font-weight:bold">{{stringProperty}}</span></p>
+<p>Dieses Tag sollte toString() von Object nutzen: <span style="font-weight:bold">{{objectProperty}}</span></p>
+<p>Dieses Tag sollte den Wert der Objekt Property ausgeben: <span style="font-weight:bold">{{objectProperty.key}}</span></p>
+<p>Dieses Tag sollte nicht geparst werden, weil es nicht existiert: <span style="font-weight:bold">{{nonexisting}}</span></p>
+<p>Protected Property wird geparst: <span style="font-weight:bold">{{protectedProperty}}</span></p>
+<p>Private Property wird geparst: <span style="font-weight:bold">{{privateProperty}}</span></p>
+<p>ECMAScript Private Property wird nicht geparst: <span style="font-weight:bold">{{#privateProperty}}</span></p>
+<hr>
+<h2>Styles</h2>
+<p class="test-style">Dieses Element sollte die Styles gesetzt bekommen</p>

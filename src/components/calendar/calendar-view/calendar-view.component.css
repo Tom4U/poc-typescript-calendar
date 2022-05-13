@@ -1,0 +1,22 @@
+.calendar {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 65vh;
+    overflow: auto;
+}
+
+.calendar-day {
+    border: 1px solid black;
+    padding: 7.5px;
+    margin: 5px;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 120px;
+    min-height: 3rem;
+    height: calc(65vh / 30);
+}
+
+.calendar-day.today {
+    background: lightgreen;
+}

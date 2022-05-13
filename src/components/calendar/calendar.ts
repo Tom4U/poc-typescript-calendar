@@ -1,8 +1,8 @@
-import { DateHelper, WeekDayConfig } from "./date-helper.js";
-import { DomHelper } from "./dom-helper.js";
+import { DateHelper, WeekDayConfig } from '../../lib/date-helper.js';
+import { DomHelper } from '../../lib/dom-helper.js';
 
 export class Calendar {
-    constructor(private locale = 'de', private maxYears = 2000) { }
+    constructor(private locale = 'de', private maxYears = 2000) {}
 
     loadYears(select: HTMLSelectElement): void {
         const year: number = DateHelper.getCurrentYear();
@@ -15,7 +15,6 @@ export class Calendar {
 
     loadMonths(select: HTMLSelectElement): void {
         const months = DateHelper.getMonths(this.locale);
-
 
         months.forEach((month, index) => {
             DomHelper.appendOptionToSelect(select, index.toString(), month);
@@ -32,7 +31,7 @@ export class Calendar {
 
         config.element.innerHTML = '';
 
-        days.forEach(day => config.element.appendChild(this.getDayElement(day, isCurrentMonth, today.getDate())));
+        days.forEach((day) => config.element.appendChild(this.getDayElement(day, isCurrentMonth, today.getDate())));
     }
 
     private getDayElement(day: WeekDayConfig, isCurrentMonth: boolean, currentDay?: number): HTMLDivElement {

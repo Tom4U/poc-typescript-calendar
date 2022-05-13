@@ -1,0 +1,21 @@
+header {
+    height: 10vh;
+}
+
+main>* {
+    display: flex;
+    flex-wrap: wrap;
+    height: 65vh;
+    margin-top: 45px;
+    overflow: auto;
+}
+
+footer {
+    height: 10vh;
+}
+
+.title {
+    font-size: 2rem;
+    padding: 15px;
+    padding-left: 0;
+}
